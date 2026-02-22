@@ -6,12 +6,22 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "node --watch src/index.js"
+    "dev": "node --watch src/index.js",
+    "db:init": "node src/db-init.js",
+    "db:generate": "npx drizzle-kit generate --config drizzle.config.js",
+    "drizzle:push": "npx drizzle-kit push --config drizzle.config.js",
+    "db:migrate": "npx drizzle-kit migrate --config drizzle.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "*",
+    "drizzle-orm": "0.45.1",
+    "express": "^5.2.1",
+    "pg": "*"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.31.9"
   }
 }
